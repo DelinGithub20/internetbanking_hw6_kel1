@@ -21,7 +21,7 @@ class DashboardController extends Controller
 
         return view('dashboard', [
             'title' => 'Dashboard',
-            'user' => $user->nama
+            'user' => $user
         ]);
     }
 }

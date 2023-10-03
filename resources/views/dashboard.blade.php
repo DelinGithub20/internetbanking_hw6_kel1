@@ -77,7 +77,7 @@
                             <a class="btn btn-xs btn-primary" href="#" onclick="return false;">Edit</a>
                             <a class="btn btn-xs btn-danger" href="#" onclick="return false;">Delete</a>
 
-             </td>
+                        </td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -94,4 +94,12 @@
     </div>
 </main>
 
+@endsection
+
+@section('script')
+<script>
+@if(session()->has('success'))
+    alert('{{ session()->get('success') }}')
+@endif
+</script>
 @endsection

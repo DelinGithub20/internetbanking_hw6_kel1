@@ -66,7 +66,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav-link-avatar" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="d-none d-md-block me-1">{{ $user }}</span>&nbsp;
+                            <span class="d-none d-md-block me-1">{{ $user->nama }}</span>&nbsp;
                             <div class="avatar"></div>
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler icon-tabler-chevron-down w-4 h-4"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"

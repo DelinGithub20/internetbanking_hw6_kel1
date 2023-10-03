@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\Profile;
+use App\Http\Requests\UpdateProfilRequest;
 use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
@@ -31,12 +32,14 @@ class ProfilController extends Controller
 
         return view('profil', [
             'title' => 'Profil',
-            'user' => $user->nama
+            'user' => $user
         ]);
     }
 
-    public function update(User $user, Request $request)
+    public function update(UpdateProfilRequest $request)
     {
+        $user = Profile::where('id_user', auth()->user()->id)->first();
+
         $user->update([
             'nama' => $request->nama,
             'email' => $request->email,
@@ -45,7 +48,7 @@ class ProfilController extends Controller
             'updated_at' => now()
         ]);
 
-        return $this->success('profile','Profile berhasil diperbarui');
+        return redirect()->route('dashboard.index')->with('success', 'Profil berhasil diperbarui');
     }
 
 }
